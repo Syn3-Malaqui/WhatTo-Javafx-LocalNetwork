@@ -4,7 +4,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -15,14 +14,23 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         AnchorPane root = new AnchorPane();
-        root.setPrefSize(600, 300);
+        root.setPrefSize(400, 450);
 
         VBox badgeList = new VBox(10);
-        badgeList.setLayoutX(20);
-        badgeList.setLayoutY(20);
+        AnchorPane.setTopAnchor(badgeList, 20.0);
+        AnchorPane.setLeftAnchor(badgeList, 20.0);
+        AnchorPane.setRightAnchor(badgeList, 20.0);
 
         Button addButton = new Button("Add Badge");
-        addButton.setStyle("-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold;");
+        // Emerald 500 background, white text
+        addButton.setStyle(
+            "-fx-background-color: #10B981;" +
+            "-fx-text-fill: white;" +
+            "-fx-font-weight: bold;" +
+            "-fx-background-radius: 8;" +
+            "-fx-padding: 8 16;"
+        );
+
         addButton.setOnAction(e -> {
             badgeCount++;
             Label badge = createBadge("Task " + badgeCount);
@@ -36,7 +44,7 @@ public class App extends Application {
         root.getChildren().addAll(badgeList, addButton);
 
         Scene scene = new Scene(root);
-        primaryStage.setTitle("To-Do Badge List");
+        primaryStage.setTitle("WhatTo");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -44,7 +52,16 @@ public class App extends Application {
     private Label createBadge(String text) {
         Label badge = new Label(text);
         badge.setFont(Font.font("Arial", 14));
-        badge.setStyle("-fx-background-color: #FFEB3B; -fx-padding: 8 12 8 12; -fx-background-radius: 8;");
+        // Emerald 100 background, Emerald 700 text
+        badge.setStyle(
+            "-fx-background-color: #D1FAE5;" +
+            "-fx-text-fill: #047857;" +
+            "-fx-padding: 10 16;" +
+            "-fx-background-radius: 10;" +
+            "-fx-border-radius: 10;" +
+            "-fx-font-weight: bold;"
+        );
+        badge.setMaxWidth(Double.MAX_VALUE);
         return badge;
     }
 
