@@ -22,14 +22,7 @@ public class App extends Application {
         AnchorPane.setRightAnchor(badgeList, 20.0);
 
         Button addButton = new Button("Add Badge");
-        // Emerald 500 background, white text
-        addButton.setStyle(
-            "-fx-background-color: #10B981;" +
-            "-fx-text-fill: white;" +
-            "-fx-font-weight: bold;" +
-            "-fx-background-radius: 8;" +
-            "-fx-padding: 8 16;"
-        );
+        addButton.getStyleClass().add("button");
 
         addButton.setOnAction(e -> {
             badgeCount++;
@@ -44,6 +37,9 @@ public class App extends Application {
         root.getChildren().addAll(badgeList, addButton);
 
         Scene scene = new Scene(root);
+
+        scene.getStylesheets().add(getClass().getResource("Styling.css").toExternalForm());
+
         primaryStage.setTitle("WhatTo");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -52,15 +48,7 @@ public class App extends Application {
     private Label createBadge(String text) {
         Label badge = new Label(text);
         badge.setFont(Font.font("Arial", 14));
-        // Emerald 100 background, Emerald 700 text
-        badge.setStyle(
-            "-fx-background-color: #D1FAE5;" +
-            "-fx-text-fill: #047857;" +
-            "-fx-padding: 10 16;" +
-            "-fx-background-radius: 10;" +
-            "-fx-border-radius: 10;" +
-            "-fx-font-weight: bold;"
-        );
+        badge.getStyleClass().add("badge");
         badge.setMaxWidth(Double.MAX_VALUE);
         return badge;
     }

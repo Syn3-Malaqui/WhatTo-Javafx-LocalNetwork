@@ -1,0 +1,16 @@
+.button {
+    -fx-background-color: #10B981;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+}
+
+.badge {
+    -fx-background-color: #D1FAE5;
+    -fx-text-fill: #047857;
+    -fx-padding: 10 16;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: bold;
+}
