@@ -35,22 +35,96 @@
     -fx-effect: dropshadow(gaussian, rgba(16,185,129,0.18), 10, 0, 0, 2);
 }
 
+.root {
+    -fx-background-color: #ffffff;
+}
+
 .scroll-pane {
-    -fx-background-color: white;
+    -fx-background-color: transparent;
     -fx-border-color: transparent;
-    -fx-effect: none;
 }
-.scroll-pane .viewport {
-    -fx-background-color: white;
-}
-.scroll-bar:vertical {
+
+.scroll-pane > .viewport {
     -fx-background-color: transparent;
-    -fx-pref-width: 14px;
 }
-.scroll-bar:vertical .thumb {
-    -fx-background-color: #9CA3AF;
-    -fx-background-radius: 7px;
-}
-.scroll-bar:vertical .track {
+
+.writing-block {
     -fx-background-color: transparent;
+    -fx-padding: 5px;
+    -fx-background-radius: 5px;
+}
+
+.title-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #1f2937;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+.title-field:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.writing-area {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #1f2937;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+}
+
+.writing-area:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Style for checklist items */
+.writing-area .text {
+    -fx-fill: #1f2937;
+}
+
+/* Checklist styles */
+.checklist-item {
+    -fx-spacing: 10;
+    -fx-alignment: center-left;
+}
+
+.checklist-circle {
+    -fx-cursor: hand;
+}
+
+.checklist-text {
+    -fx-fill: #1f2937;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+}
+
+/* Custom scrollbar styling */
+.scroll-pane > .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-pane > .scroll-bar:vertical > .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .scroll-bar:vertical > .thumb {
+    -fx-background-color: #d1d5db;
+    -fx-background-radius: 5px;
+}
+
+.scroll-pane > .scroll-bar:vertical > .thumb:hover {
+    -fx-background-color: #9ca3af;
+}
+
+/* Hide horizontal scrollbar */
+.scroll-pane > .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+    -fx-max-height: 0;
 }
